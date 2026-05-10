@@ -144,3 +144,4 @@ frontend/build/
 dmypy.json
 .ruff_cache/
 >>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
+.env
