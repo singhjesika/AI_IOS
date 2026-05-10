@@ -1,0 +1,13 @@
+{
+  "welcome": "Hello! I'm AI_IOS, your personal AI assistant. How can I help you today?",
+  "finance_greeting": "I can help you with budgeting, expense tracking, savings goals, and financial planning. What would you like to work on?",
+  "health_greeting": "I'm your health and wellness coach. I can help with workout plans, nutrition advice, sleep tracking, and more.",
+  "planner_greeting": "Let me help you organise your day. I can schedule events, set reminders, and build your daily plan.",
+  "coding_greeting": "I'm your coding assistant. Share your code or describe the problem and I'll help you solve it.",
+  "study_greeting": "Ready to learn! I can explain concepts, create quizzes, build flashcards, and help you prepare for exams.",
+  "travel_greeting": "Planning a trip? I can create itineraries, suggest destinations, and help with travel logistics.",
+  "shopping_greeting": "Looking for something? Tell me your budget and requirements and I'll help you find the best options.",
+  "career_greeting": "Let's advance your career. I can review your resume, prep you for interviews, and help you navigate job offers.",
+  "error_message": "I'm sorry, I encountered an issue. Please try again.",
+  "fallback": "I'm not sure I understood that. Could you rephrase or give me more details?"
+}

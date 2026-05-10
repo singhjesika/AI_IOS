@@ -1,0 +1,4 @@
+name,email,password,plan
+Alice Demo,alice@demo.com,AlicePass1,free
+Bob Demo,bob@demo.com,BobPass12,pro
+Carol Demo,carol@demo.com,CarolPass1,free

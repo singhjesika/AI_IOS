@@ -1,0 +1,28 @@
+:root {
+  --color-bg: #000000;
+  --color-bg-glass: rgba(255, 255, 255, 0.04);
+  --color-accent: #00c8ff;
+  --color-accent-dim: rgba(0, 200, 255, 0.2);
+  --color-accent-border: rgba(0, 200, 255, 0.25);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --color-text-faint: rgba(255, 255, 255, 0.25);
+  --color-danger: #ff5555;
+  --color-success: #00ff88;
+  --color-warning: #ffaa00;
+  --font-display: 'Orbitron', monospace;
+  --font-body: 'Rajdhani', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --blur: blur(20px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0, 200, 255, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 200, 255, 0.5); }
+
+/* Selection */
+::selection { background: rgba(0, 200, 255, 0.3); color: #fff; }

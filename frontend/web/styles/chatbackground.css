@@ -1,0 +1,122 @@
+/* ============================================================
+   CHAT PAGE BACKGROUND — futuristic hexagon + glow + particles
+   Import this CSS only on the chat/agent page.
+   ============================================================ */
+
+/* Ensure chat panel content sits above the canvas layers */
+.chat-panel,
+#agent-panel,
+.page-dashboard .dash-main {
+  position: relative;
+  z-index: 10;
+}
+
+/* Chat message bubbles — extra glass feel on the chat page */
+.chat-msg.ai .chat-text {
+  background: rgba(0, 0, 0, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.chat-msg.user .chat-text {
+  background: rgba(0, 200, 255, 0.12);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Agent header glass bar */
+.agent-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.48);
+  border: 1px solid rgba(0, 200, 255, 0.18);
+  border-radius: 16px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  margin-bottom: 20px;
+  transition: border-color 0.4s ease;
+}
+
+/* Chat input glass */
+.chat-input {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-input:focus {
+  box-shadow: 0 0 0 1px rgba(0, 200, 255, 0.35) !important;
+}
+
+/* Chat send button pulse on hover */
+.chat-send {
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease !important;
+}
+.chat-send:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 200, 255, 0.2) !important;
+}
+.chat-send:active {
+  transform: scale(0.97);
+}
+
+/* Typing animation */
+@keyframes typingPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1;   }
+}
+.typing {
+  animation: typingPulse 1.2s ease-in-out infinite !important;
+}
+
+/* Scrollbar inside chat messages */
+.chat-messages::-webkit-scrollbar       { width: 4px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(0, 200, 255, 0.25);
+  border-radius: 2px;
+}
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 200, 255, 0.5);
+}
+
+/* Message entrance animation */
+@keyframes msgSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.chat-msg {
+  animation: msgSlideIn 0.3s ease forwards;
+}
+
+/* Vignette overlay — darkens screen edges for depth */
+.chat-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.65) 100%);
+}
+
+/* Thin top accent line matching agent color — set via JS custom property */
+.chat-accent-line {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  z-index: 200;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--agent-color, #00c8ff) 30%,
+    var(--agent-color, #00c8ff) 70%,
+    transparent
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}

@@ -1,0 +1,12 @@
+[
+  {"title": "Review monthly budget",        "priority": "high",   "category": "finance"},
+  {"title": "30-minute morning workout",    "priority": "medium", "category": "health"},
+  {"title": "Read 20 pages of a book",      "priority": "low",    "category": "study"},
+  {"title": "Weekly planning session",      "priority": "high",   "category": "planner"},
+  {"title": "Update resume",                "priority": "medium", "category": "career"},
+  {"title": "Drink 2L of water",            "priority": "medium", "category": "health"},
+  {"title": "Fix login bug in project",     "priority": "high",   "category": "coding"},
+  {"title": "Research flight tickets",      "priority": "low",    "category": "travel"},
+  {"title": "Compare phone options",        "priority": "low",    "category": "shopping"},
+  {"title": "Prepare for job interview",    "priority": "high",   "category": "career"}
+]

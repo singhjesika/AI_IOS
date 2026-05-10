@@ -1,0 +1,70 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+*.egg-link
+.installed.cfg
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment files
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# ML Models
+*.pkl
+*.h5
+*.model
+
+# Node
+node_modules/
+.next/
+out/
+.npm
+
+# Flutter
+mobile/flutter_app/.dart_tool/
+mobile/flutter_app/.flutter-plugins
+mobile/flutter_app/.flutter-plugins-dependencies
+mobile/flutter_app/build/
+mobile/flutter_app/.packages
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
