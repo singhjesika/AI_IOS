@@ -1,8 +1,12 @@
 __pycache__/
 *.py[cod]
+<<<<<<< HEAD
 *.pyo
 *.pyd
 .Python
+=======
+*$py.class
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
 *.so
 *.egg
 *.egg-info/
@@ -15,6 +19,7 @@ sdist/
 wheels/
 *.egg-link
 .installed.cfg
+<<<<<<< HEAD
 
 # Virtual environments
 venv/
@@ -28,10 +33,35 @@ ENV/
 
 # IDE
 .vscode/
+=======
+MANIFEST
+
+venv/
+env/
+.env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+.env
+.env.local
+.env.production
+.env.staging
+*.env
+
+*.db
+*.sqlite
+*.sqlite3
+aiios.db
+
+.vscode/settings.json
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
 .idea/
 *.swp
 *.swo
 *~
+<<<<<<< HEAD
 
 # Database
 *.db
@@ -68,3 +98,49 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+=======
+.DS_Store
+Thumbs.db
+
+*.log
+logs/
+log/
+
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+coverage.xml
+*.cover
+nosetests.xml
+test-results/
+
+data/raw/
+data/processed/
+data/embeddings/
+data/models/*.pkl
+data/models/*.keras
+data/models/*.h5
+data/models/*.pt
+notebooks/.ipynb_checkpoints/
+
+.dockerignore
+
+alembic/versions/*.py
+!alembic/versions/.gitkeep
+
+node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/build/
+.npm
+
+*.bak
+*.tmp
+*.orig
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 Orchestrator: classifies intent and routes to the correct specialist agent.
 """
@@ -87,3 +88,21 @@ class Orchestrator:
         )
 
         return {"reply": reply, "agent": intent}
+=======
+from app.agents.finance_agent import FinanceAgent
+from app.agents.health_agent import HealthAgent
+from app.agents.planner_agent import PlannerAgent
+
+agents = {
+    "finance": FinanceAgent(),
+    "health": HealthAgent(),
+    "planner": PlannerAgent(),
+}
+
+
+async def run_agent(agent_type: str, message: str, context: dict = {}) -> str:
+    agent = agents.get(agent_type)
+    if not agent:
+        return f"Agent '{agent_type}' not found."
+    return await agent.run(message, context)
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd

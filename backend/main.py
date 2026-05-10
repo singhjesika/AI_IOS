@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 AI_IOS - FastAPI Entry Point
 """
@@ -14,10 +15,21 @@ from database import init_db, engine
 from app.config.settings import settings
 from app.api.routes import auth, user, ai, task, finance, health, planner, voice, analytics
 from app.utils.logger import logger
+=======
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+from loguru import logger
+
+from app.config import settings
+from app.database import init_db
+from app.api.routes import user, task, ai
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+<<<<<<< HEAD
     """Startup & shutdown events."""
     logger.info(f"Starting {settings.APP_NAME} v{settings.APP_VERSION}")
     import os
@@ -27,10 +39,18 @@ async def lifespan(app: FastAPI):
     yield
     logger.info("Shutting down...")
     await engine.dispose()
+=======
+    logger.info("🧠 AI-IOS starting up...")
+    await init_db()
+    logger.info("✅ Database initialized")
+    yield
+    logger.info("🛑 AI-IOS shutting down...")
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
 
 
 app = FastAPI(
     title=settings.APP_NAME,
+<<<<<<< HEAD
     version=settings.APP_VERSION,
     description="AI-powered personal assistant backend",
     lifespan=lifespan,
@@ -40,11 +60,25 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.ALLOWED_ORIGINS,
+=======
+    description="AI Life Optimization System — Backend API",
+    version=settings.VERSION,
+    lifespan=lifespan,
+    docs_url="/docs",
+    redoc_url="/redoc",
+)
+
+# ── Middleware ────────────────────────────────────────────────────────────────
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.CORS_ORIGINS,
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+<<<<<<< HEAD
 # ─── Routers ───────────────────────────────────────────
 app.include_router(auth.router,      prefix="/api/auth",      tags=["Auth"])
 app.include_router(user.router,      prefix="/api/user",      tags=["User"])
@@ -104,3 +138,25 @@ async def health_check():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+=======
+# ── Routers ───────────────────────────────────────────────────────────────────
+app.include_router(user.router,  prefix="/api/v1/users",  tags=["users"])
+app.include_router(task.router,  prefix="/api/v1/tasks",  tags=["tasks"])
+app.include_router(ai.router,    prefix="/api/v1/ai",     tags=["ai"])
+
+
+@app.get("/")
+async def root():
+    return {"message": "🧠 AI-IOS is running", "version": settings.VERSION}
+
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "app": settings.APP_NAME}
+
+
+
+
+
+
+>>>>>>> 7c6fe786d0ebce90909c90ce7f1ac9867d4e86fd
